@@ -1,15 +1,27 @@
-<div class="login jumbotron center-block">
-  <h1>Login</h1>
-  <form role="form" (submit)="login($event, username.value, password.value)">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" #username class="form-control" id="username" placeholder="Username">
+<div class="container" >
+    <div class="title">
+        Welcome
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" #password class="form-control" id="password" placeholder="Password">
+    <div class="panel-body">
+        <div class="row">
+            <div class="input-field col s12">
+                <input [(ngModel)]="user.email" id="email" 
+                    type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input [(ngModel)]="user.password" id="password" 
+                    type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+
+        <span>{{errorMsg}}</span>
+        <button (click)="login()" 
+            class="btn waves-effect waves-light" 
+            type="submit" name="action">Login</button>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-    <a href="/signup">Click here to Signup</a>
-  </form>
- </div>
+</div>
