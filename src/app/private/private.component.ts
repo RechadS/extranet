@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
+import {ROUTER_DIRECTIVES, OnActivate} from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,11 @@ export class PrivateComponent implements OnInit {
 
   	constructor(
 	    private _service:AuthenticationService){
-  		 this._service.checkCredentials();
+  		 
+  	}
+
+  	onActivate(next){
+  		this._service.checkCredentials();
   	}
 
 	ngOnInit(){

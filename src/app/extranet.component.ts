@@ -18,5 +18,6 @@ import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 ])
 
 export class ExtranetAppComponent {
+	title: "extranet works !";
   constructor(router:Router) {}
 }
