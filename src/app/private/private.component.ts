@@ -3,7 +3,7 @@ import {AuthenticationService} from '../authentication.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'login',
+  selector: 'login-form',
   providers: [AuthenticationService],
   templateUrl: 'private.component.html',
   styleUrls: ['private.component.css']
@@ -11,10 +11,12 @@ import {AuthenticationService} from '../authentication.service';
 export class PrivateComponent implements OnInit {
 
   	constructor(
-	    private _service:AuthenticationService){}
+	    private _service:AuthenticationService){
+  		 this._service.checkCredentials();
+  	}
 
 	ngOnInit(){
-	    this._service.checkCredentials();
+	   
 	}
 
 	logout() {

@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import {Routes, Router, ROUTER_DIRECTIVES, RouterOutletMap} from '@angular/router';
-import {RouterLink} from '@angular/router-deprecated';
-
-import {HomeComponent} from './home';
 import {LoginComponent} from './login';
 import {PrivateComponent} from './private';
+import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -15,11 +12,11 @@ import {PrivateComponent} from './private';
 })
 
 @Routes([
-  { path: '/', component: PrivateComponent},
+	{ path: '/', component: PrivateComponent},
+  { path: '/home', component: PrivateComponent},
   { path: '/login', component: LoginComponent }
 ])
 
 export class ExtranetAppComponent {
-  title = 'extranet works!';
-  constructor() {}
+  constructor(router:Router) {}
 }

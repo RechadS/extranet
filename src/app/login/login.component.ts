@@ -1,16 +1,16 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 import {AuthenticationService, User} from '../authentication.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'login',
+  selector: 'login-form',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css'],
   providers: [AuthenticationService]
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent{
  
     public user = new User('','');
     public errorMsg = '';
@@ -24,6 +24,5 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    ngOnInit() {
-    }
+   
 }
