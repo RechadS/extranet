@@ -12,8 +12,8 @@ import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 })
 
 @Routes([
-	{ path: '/', component: PrivateComponent},
-  { path: '/home', component: PrivateComponent},
+  { path: '/', component: PrivateComponent},
+	{ path: '/private', component: PrivateComponent},
   { path: '/login', component: LoginComponent }
 ])
 

@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-
-import { LeftsidebarComponent } from '../leftsidebar'; 
+import {Router, ROUTER_DIRECTIVES, OnActivate} from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-home',
+  selector: 'content',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [LeftsidebarComponent]
+  directives: [ROUTER_DIRECTIVES] 
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent{
 
 
-  constructor() {
-    
+  constructor(router:Router) {
   }
 
+  ngOnInit(){
 
-  ngOnInit() {
   }
 
 }

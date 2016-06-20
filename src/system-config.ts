@@ -26,6 +26,8 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  'classie',
+  'inputlabel',
 
   // App specific barrels.
   'app',
@@ -50,7 +52,9 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    'classie': 'vendor/custom/classie',
+    'inputlabel': 'vendor/custom/inputlabel'
   },
   packages: cliSystemConfigPackages
 });

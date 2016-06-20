@@ -25,7 +25,7 @@ export class AuthenticationService {
     var authenticatedUser = users.find(u => u.email === user.email);
     if (authenticatedUser){
       localStorage.setItem("user", JSON.stringify(authenticatedUser));
-      this._router.navigate(['home']);      
+      this._router.navigate(['private/home']);      
       return true;
     }
     return false;
