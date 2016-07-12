@@ -28,6 +28,7 @@ const barrels: string[] = [
   'rxjs',
   'classie',
   'inputlabel',
+  'SelectFxJs',
 
   // App specific barrels.
   'app',
@@ -36,6 +37,13 @@ const barrels: string[] = [
   'app/login',
   'app/home',
   'app/private',
+  'app/add-declaration',
+  'app/list-declaration',
+  'app/documentation',
+  'app/client',
+  'app/contrat',
+  'app/contact',
+  'app/logiciel',
   /** @cli-barrel */
 ];
 
@@ -54,7 +62,8 @@ System.config({
     'rxjs': 'vendor/rxjs',
     'main': 'main.js',
     'classie': 'vendor/custom/classie',
-    'inputlabel': 'vendor/custom/inputlabel'
+    'inputlabel': 'vendor/custom/inputlabel',
+    'SelectFxJs': 'vendor/custom/selectFx'
   },
   packages: cliSystemConfigPackages
 });
