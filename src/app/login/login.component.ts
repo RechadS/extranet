@@ -1,36 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router-deprecated';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
-import { Http, Headers } from '@angular/http';
+import { Component, ElementRef } from '@angular/core';
+import {AuthenticationService, User} from '../authentication.service';
+
+
+
+import 'vendor/custom/classie/index.js';
+import 'vendor/custom/selectFx/index.js';
+import 'vendor/custom/inputlabel/index.js';
+
+declare var classie: any;
+declare var SelectFxJs: any;
+declare var inputlabel: any;
 
 @Component({
   moduleId: module.id,
-  selector: 'login',
+  selector: 'login-form',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css'],
-  directives: [RouterLink, CORE_DIRECTIVES, FORM_DIRECTIVES ]
+  providers: [AuthenticationService]
 })
-export class LoginComponent implements OnInit {
 
-  constructor(public router: Router, public http: Http) {}
+export class LoginComponent{
+ 
+    public user = new User('','');
+    public errorMsg = '';
+ 
+    constructor(
+        private _service:AuthenticationService) {
 
-  login(event, username, password) {
-    event.preventDefault();
-    let body = JSON.stringify({ username, password });
-    this.http.post('http://localhost:3001/sessions/create', body, { headers: contentHeaders })
-      .subscribe(
-        response => {
-          localStorage.setItem('jwt', response.json().id_token);
-          this.router.parent.navigateByUrl('/home');
-        },
-        error => {
-          alert(error.text());
-          console.log(error.text());
+        
+    }
+ 
+    login() {
+        if(!this._service.login(this.user)){
+            this.errorMsg = 'Failed to login';
         }
-      );
-  }
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+      inputlabel.inputlabelcheck();
+    }
 
+
+
+   
 }

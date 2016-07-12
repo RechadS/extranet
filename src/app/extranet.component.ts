@@ -1,25 +1,23 @@
 import { Component } from '@angular/core';
-import {RouteConfig, RouterLink, Router} from '@angular/router-deprecated';
-
-import {HomeComponent} from './home';
 import {LoginComponent} from './login';
-import {LoggedInRouterOutlet} from './LoggedInRouterOutlet.directive';
+import {PrivateComponent} from './private';
+import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'extranet-app',
   templateUrl: 'extranet.component.html',
   styleUrls: ['extranet.component.css'],
-  directives: [LoggedInRouterOutlet]
+  directives: [LoginComponent, ROUTER_DIRECTIVES]
 })
 
-@RouteConfig([
-  { path: '/', redirectTo: ['/Home'] },
-  { path: '/home', component: HomeComponent, as: 'Home' },
-  { path: '/login', component: LoginComponent, as: 'Login' }
+@Routes([
+  { path: '/', component: PrivateComponent},
+	{ path: '/private', component: PrivateComponent},
+  { path: '/login', component: LoginComponent }
 ])
 
 export class ExtranetAppComponent {
-  title = 'extranet works!';
-  constructor() {}
+	title: "extranet works !";
+  constructor(router:Router) {}
 }

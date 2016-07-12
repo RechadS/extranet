@@ -1,6 +1,9 @@
-.leftsidebar{
-  padding: 0;
+.leftsidebar.col-sm-2{
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
 }
+
 
 .navbar{
   background-color: #d23f2d;
@@ -43,6 +46,9 @@
 
 /* make sidebar nav vertical */ 
 @media (min-width: 768px) {
+  .leftsidebar.col-sm-2{
+    position: fixed;
+  }
   .navbar-header{
     float: none;
   }

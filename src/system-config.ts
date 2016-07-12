@@ -20,11 +20,15 @@ const barrels: string[] = [
   '@angular/compiler',
   '@angular/http',
   '@angular/router',
+  '@angular/router-deprecated',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
 
   // Thirdparty barrels.
   'rxjs',
+  'classie',
+  'inputlabel',
+  'SelectFxJs',
 
   // App specific barrels.
   'app',
@@ -32,6 +36,14 @@ const barrels: string[] = [
   'app/leftsidebar',
   'app/login',
   'app/home',
+  'app/private',
+  'app/add-declaration',
+  'app/list-declaration',
+  'app/documentation',
+  'app/client',
+  'app/contrat',
+  'app/contact',
+  'app/logiciel',
   /** @cli-barrel */
 ];
 
@@ -48,7 +60,10 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    'classie': 'vendor/custom/classie',
+    'inputlabel': 'vendor/custom/inputlabel',
+    'SelectFxJs': 'vendor/custom/selectFx'
   },
   packages: cliSystemConfigPackages
 });
