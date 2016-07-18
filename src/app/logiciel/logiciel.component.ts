@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ROUTER_DIRECTIVES, OnActivate} from '@angular/router';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 export class Logiciel {
   constructor(public nom: string, public type: string, public description: string, 

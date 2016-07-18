@@ -1,12 +1,15 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { provide } from '@angular/core';
-import { ROUTER_PROVIDERS } from '@angular/router';
-
 import { enableProdMode } from '@angular/core';
+import { appRouterProviders } from './app/extranet.routes';
 import { ExtranetAppComponent, environment } from './app/';
 
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(ExtranetAppComponent, [ROUTER_PROVIDERS]);
+bootstrap(ExtranetAppComponent, [
+  appRouterProviders
+])
+.catch(err => console.error(err));
+

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ROUTER_DIRECTIVES, OnActivate} from '@angular/router';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 export class Client {
   constructor(public id: number, public raisonsociale: string, public email: string,
     public telephone: string, public nbContrats: number, public montantContrats: number) { }
 }
-
 
 
 @Component({
@@ -15,6 +14,7 @@ export class Client {
   styleUrls: ['client.component.css'],
   directives: [ROUTER_DIRECTIVES]
 })
+
 export class ClientComponent implements OnInit {
 
   clients = [
